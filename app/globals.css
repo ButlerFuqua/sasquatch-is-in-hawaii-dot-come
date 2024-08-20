@@ -26,9 +26,18 @@ body {
     rgb(var(--background-start-rgb));
 } */
 
-a{
+/* h1 {
+  font-size: 1.5rem;
+} */
+
+a {
   color: rgb(35, 59, 217);
- text-decoration: underline;
+  text-decoration: underline;
+}
+
+.customContainer {
+  width: 100%;
+  max-width: 800px;
 }
 
 @layer utilities {

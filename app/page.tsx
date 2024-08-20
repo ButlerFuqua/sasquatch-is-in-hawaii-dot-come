@@ -1,14 +1,37 @@
 import Image from "next/image";
 
+import StandardButton from "@/components/Button";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center  p-24">
-   <h1 className="text-2xl font-black">Sasquatch is in Hawai'i</h1>
-   <h2>Coming soon</h2>
-   <h3>Join email list</h3>
-   <p>
-      <a className="text-xl font-black" href="https://butlerfuqua.beehiiv.com/subscribe" target="_blank">Newsletter Signup Page ↗️</a>
-   </p>
+    <main className="min-h-screen">
+      <br />
+
+      <div id="wrapper" className="p-1">
+        <div id="headerSection" className="customContainer mx-auto text-center mb-2 text-4xl font-black">
+          <h1>Sasquatch is in Hawai'i</h1>
+        </div>
+
+        <div id="topJoinAndStoreButtons" className="sticky top-0 customContainer mx-auto flex justify-around">
+          <StandardButton text="Join" />
+          <StandardButton text="Share" />
+        </div>
+
+
+        <br />
+
+
+        <div id="videoWrapper" className="container mx-auto flex justify-center">
+          <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+
+        <div id="shareWrapper" className="sticky top-0 customContainer mx-auto flex justify-around mt-1">
+          <StandardButton text="Share Video on Youtube" className="" />
+          <StandardButton text="Share this site" className="" />
+        </div>
+
+      </div>
     </main>
   );
 }
