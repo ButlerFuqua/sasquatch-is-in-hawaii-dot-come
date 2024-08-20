@@ -13,7 +13,7 @@ export default function StandardButton({
     className
 }: StandardButtonPropTypes) {
     return <button className={
-        `rounded ${bgColorClass ?? `bg-green-500`} 
+        `${bgColorClass ?? `bg-green-500`} 
         ${fontColorClass ?? `text-white`} 
         px-3 py-1 shadow-md
         ${className}

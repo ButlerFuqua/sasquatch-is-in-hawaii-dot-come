@@ -8,28 +8,26 @@ export default function Home() {
       <br />
 
       <div id="wrapper" className="p-1">
-        <div id="headerSection" className="customContainer mx-auto text-center mb-2 text-4xl font-black">
-          <h1>Sasquatch is in Hawai'i</h1>
+        <div id="headerSection" className="customContainer mx-auto text-center mb-3">
+          <h1 className="text-4xl font-black mb-1">Sasquatch is in Hawai'i</h1>
+          <p>A self-obsorbed media guru and an Alabama Squatcher try to find Sasquatch in the one location no one has looked -Hawai'i</p>
         </div>
 
-        <div id="topJoinAndStoreButtons" className="sticky top-0 customContainer mx-auto flex justify-around">
-          <StandardButton text="Join" />
-          <StandardButton text="Share" />
+        <div id="topJoinAndStoreButtons" className="sticky top-0 customContainer mx-auto flex justify-around bg-white py-1">
+          <StandardButton text="Join" className="flex-1" bgColorClass="bg-yellow-400" fontColorClass="text-black" />
+          <StandardButton text="Share" className="flex-1" />
         </div>
-
-
-        <br />
 
 
         <div id="videoWrapper" className="container mx-auto flex justify-center">
           {/* @ts-ignore */}
-          <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullscreen></iframe>
         </div>
 
 
         <div id="shareWrapper" className="sticky top-0 customContainer mx-auto flex justify-around mt-1">
-          <StandardButton text="Share Video on Youtube" className="" />
-          <StandardButton text="Share this site" className="" />
+          <StandardButton text="Share Video from Youtube" bgColorClass="bg-red-500" className="flex-1" />
+          <StandardButton text="Share this site" bgColorClass="bg-yellow-400" fontColorClass="text-black" className="flex-1" />
         </div>
 
       </div>
