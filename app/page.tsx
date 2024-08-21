@@ -7,12 +7,18 @@ import Modal from "@/components/Modal";
 import { useState } from "react";
 import TextInput from "@/components/TextInput";
 import ButtonLink from "@/components/ButtonLink";
+import axios from "axios";
+import Loader from "@/components/Loader";
 
 export default function Home() {
 
   const [showJoinModal, setShowJoinModal] = useState(false);
   const [subscribeEmail, setSubscribeEmail] = useState('');
+  const [showLoader, setShowLoader] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  const backupErrorMessage = `Sorry! There was an error. Try again?`;
 
   const handleCloseJoinModal = () => {
     setShowJoinModal(false);
@@ -26,10 +32,40 @@ export default function Home() {
     console.log('SHARE!');
   }
 
-  const handleSubscribeClick = () => {
-    console.log('SUBSCRIBE');
-  }
+  const handleSubmission = async (event: any) => {
+    event.preventDefault();
 
+    alert('hey')
+
+    setShowLoader(true);
+
+    try {
+      await axios.post(`/api/signup`, {
+        email: subscribeEmail.trim().toLowerCase(),
+      });
+    } catch (error: any) {
+      let errorMsg = ``;
+      switch (error.response?.status) {
+        case 400:
+          errorMsg = `Email or message is invalid.`;
+          break;
+        default:
+          errorMsg = backupErrorMessage;
+          break;
+      }
+      setErrorMessage(errorMsg);
+      setShowLoader(false);
+      console.error(error);
+      setTimeout(() => { setErrorMessage(null) }, 3000)
+      return;
+    }
+
+    setSubscribeEmail('');
+    setShowSuccess(true);
+    setTimeout(() => setShowSuccess(false), 3000);
+
+    setShowLoader(false);
+  }
   return (
 
     <main className="min-h-screen">
@@ -39,10 +75,18 @@ export default function Home() {
       <Modal showModal={showJoinModal} closeAction={handleCloseJoinModal}>
         <div className="container p-1 flex flex-col justify-center h-full">
           <div>
-            <div className="flex">
-              <TextInput value={subscribeEmail} setValue={setSubscribeEmail} />
-              <StandardButton text="Subscribe" className="ml-1" onClick={handleSubscribeClick} />
-            </div>
+
+            {!showLoader
+              ? <form className="flex" onSubmit={handleSubmission}>
+                <TextInput inputType="email" value={subscribeEmail} setValue={setSubscribeEmail} required={true} />
+                <StandardButton buttonType="submit" text="Subscribe" className="ml-1" />
+              </form>
+              : <div style={{ height: `3rem`, }} className="flex justify-center w-100 items-center rounded">
+                <Loader />
+              </div>
+            }
+
+
             <p className="my-2 font-bold text-center">Real Updates <span className="font-black">ONLY</span></p>
             <p className="text-center mt-2">Your email will not be shared or sold, and you will not be bombarded with emails.</p>
           </div>

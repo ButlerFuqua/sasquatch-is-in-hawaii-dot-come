@@ -3,7 +3,8 @@ type StandardButtonPropTypes = {
     borderColor?: string;
     fontColorClass?: string;
     className?: string;
-    onClick: any;
+    onClick?: any;
+    buttonType?: "button" | "submit" | "reset";
 
 }
 
@@ -11,11 +12,13 @@ export default function StandardButton({
     text,
     borderColor,
     onClick,
-    className
+    className,
+    buttonType,
 }: StandardButtonPropTypes) {
     return <button
         onClick={onClick}
         style={{ minWidth: 100 }}
+        type={buttonType ?? 'button'}
         className={
             `
         bg-white
