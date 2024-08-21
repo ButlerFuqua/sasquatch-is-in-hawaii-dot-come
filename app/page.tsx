@@ -6,6 +6,7 @@ import StandardButton from "@/components/Button";
 import Modal from "@/components/Modal";
 import { useState } from "react";
 import TextInput from "@/components/TextInput";
+import ButtonLink from "@/components/ButtonLink";
 
 export default function Home() {
 
@@ -26,7 +27,7 @@ export default function Home() {
   }
 
   const handleSubscribeClick = () => {
-    console.log('SUBSCRIBE')
+    console.log('SUBSCRIBE');
   }
 
   return (
@@ -79,6 +80,9 @@ THENK: COOL BACKGROUND
         <div id="videoWrapper" className="container mx-auto flex justify-center">
           {/* @ts-ignore */}
           <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullscreen></iframe>
+        </div>
+        <div className="flex justify-center p-2">
+          <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />
         </div>
 
 
