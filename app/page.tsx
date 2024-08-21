@@ -132,9 +132,7 @@ export default function Home() {
 
         {/* 
 
-NEXT: Get ALL Buttons to work
 THEN: Add Social Follow Buttons
-THEN: COLOR PALLET
 THEN: FOOTER LINKS
 THENK: COOL BACKGROUND
 

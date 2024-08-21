@@ -18,8 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-        <footer className="bg-green-200">
-          <div className="customContainer mx-auto flex justify-around">
+        <footer className="bg-gray_dark text-white">
+          {/* <div className="customContainer mx-auto flex justify-around">
             <div>
               <h3 className="font-bold text-lg">Item title</h3>
               <ul>
@@ -37,7 +37,7 @@ export default function RootLayout({
                 <li>Item</li>
               </ul>
             </div>
-          </div>
+          </div> */}
           <div className="text-sm customContainer mx-auto text-center py-3">
             <p>&copy; Butler Fuqua Films, LLC | All Rights Reserved</p>
           </div>
