@@ -144,7 +144,8 @@ THENK: COOL BACKGROUND
 
         <div id="topJoinAndStoreButtons" className="sticky top-0 customContainer mx-auto flex justify-around bg-white py-1">
           <StandardButton onClick={handleOpenJoinModal} text="Join" className="" fontColorClass="text-black" />
-          <StandardButton onClick={handleShareClick} text="Share" borderColor="border-primary_alt" className="" />
+          <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />
+          {/* <StandardButton onClick={handleShareClick} text="Share" borderColor="border-primary_alt" className="" /> */}
         </div>
 
 
@@ -152,9 +153,9 @@ THENK: COOL BACKGROUND
           {/* @ts-ignore */}
           <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
-        <div className="flex justify-center p-2">
+        {/* <div className="flex justify-center p-2">
           <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />
-        </div>
+        </div> */}
 
 
         {/* <div id="shareWrapper" className="sticky top-0 customContainer mx-auto flex justify-around mt-1">
