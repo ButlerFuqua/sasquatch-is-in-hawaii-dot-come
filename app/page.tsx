@@ -71,7 +71,7 @@ export default function Home() {
 
       {/* Join Modal */}
       <Modal showModal={showJoinModal} closeAction={handleCloseJoinModal}>
-        <div className="mx-auto customContainer p-1 flex flex-col justify-center h-full">
+        <div style={{ height: `60%` }} className="mx-auto customContainer p-1 flex flex-col justify-center">
           <div>
 
             {!showLoader
