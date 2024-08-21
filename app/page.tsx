@@ -13,7 +13,7 @@ import Loader from "@/components/Loader";
 export default function Home() {
 
   const [showJoinModal, setShowJoinModal] = useState(false);
-  const [subscribeEmail, setSubscribeEmail] = useState('');
+  const [subscribeEmail, setSubscribeEmail] = useState('butlerfuqua+siih-local@gmail.com');
   const [showLoader, setShowLoader] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -34,8 +34,6 @@ export default function Home() {
 
   const handleSubmission = async (event: any) => {
     event.preventDefault();
-
-    alert('hey')
 
     setShowLoader(true);
 
@@ -93,6 +91,35 @@ export default function Home() {
         </div>
       </Modal>
 
+      {/* Alert messages */}
+      {showSuccess || errorMessage || true
+        ? <div className="fixed top-0 left-0 p-3 w-full z-20">
+
+          {
+            showSuccess
+              ? (
+
+                <div className="w-100 bg-gray_dark rounded-lg p-1 px-2 text-green-500 p-1 flex items-center justify-between" role="alert">
+                  <p><span className="font-bold ">Success!</span> You will be emailed when there is an update!</p>
+
+                  <StandardButton className="ml-1" onClick={() => setShowSuccess(false)} text="Close" borderColor="border-green-500" />
+                </div>
+              ) : ''
+          }
+          {
+            errorMessage
+              ? (
+
+                <div className="w-100 bg-gray_dark rounded-lg p-1 px-2 text-red-500 p-1 flex items-center justify-between" role="alert">
+                  <p>There is an error message{errorMessage}</p>
+                  <StandardButton className="ml-1" onClick={() => setErrorMessage(null)} text="Close" borderColor="border-red-500" />
+                </div>
+              ) : ''
+          }
+
+
+        </div> : ''}
+
       <br />
 
       <div id="wrapper" className="p-1">
@@ -123,7 +150,7 @@ THENK: COOL BACKGROUND
 
         <div id="videoWrapper" className="container mx-auto flex justify-center">
           {/* @ts-ignore */}
-          <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullscreen></iframe>
+          <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <div className="flex justify-center p-2">
           <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />

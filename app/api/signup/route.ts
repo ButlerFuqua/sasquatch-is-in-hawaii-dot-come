@@ -110,17 +110,17 @@ async function handler(
             ]
         }'
     */
-        
+
     try {
         await axios.post(`https://api.beehiiv.com/v2/publications/${beehiibPubId}/subscriptions`,
             {
                 email,
                 reactivate_existing: false,
                 send_welcome_email: false,
-                utm_source: "ButlerFuqua",
+                utm_source: "Sasquatch is in Hawaii",
                 utm_campaign: "ongoing_promotion",
                 utm_medium: "organic",
-                referring_site: "www.butlerfuqua.com/api",
+                referring_site: "www.sasquatchisinhawaii.com/api",
             },
             {
                 headers: {

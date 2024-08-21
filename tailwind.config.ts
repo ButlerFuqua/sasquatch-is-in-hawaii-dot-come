@@ -20,7 +20,7 @@ const config: Config = {
         'secondary_alt': '#0D4023',
         'neutral': '#592b02',
         'gray_light': '#6B7280',
-        'gray_dark': '##1F2937',
+        'gray_dark': '#1F2937',
         'gray_very_dark': '#111827',
       }
     },
