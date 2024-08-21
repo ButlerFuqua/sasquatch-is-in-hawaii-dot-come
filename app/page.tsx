@@ -5,10 +5,12 @@ import Image from "next/image";
 import StandardButton from "@/components/Button";
 import Modal from "@/components/Modal";
 import { useState } from "react";
+import TextInput from "@/components/TextInput";
 
 export default function Home() {
 
   const [showJoinModal, setShowJoinModal] = useState(false);
+  const [subscribeEmail, setSubscribeEmail] = useState('');
 
 
   const handleCloseJoinModal = () => {
@@ -23,6 +25,9 @@ export default function Home() {
     console.log('SHARE!');
   }
 
+  const handleSubscribeClick = () => {
+    console.log('SUBSCRIBE')
+  }
 
   return (
 
@@ -31,9 +36,16 @@ export default function Home() {
 
       {/* Join Modal */}
       <Modal showModal={showJoinModal} closeAction={handleCloseJoinModal}>
-        <>
-          Join Modal
-        </>
+        <div className="container p-1 flex flex-col justify-center h-full">
+          <div>
+            <div className="flex">
+              <TextInput value={subscribeEmail} setValue={setSubscribeEmail} />
+              <StandardButton text="Subscribe" className="ml-1" onClick={handleSubscribeClick} />
+            </div>
+            <p className="my-2 font-bold text-center">Real Updates <span className="font-black">ONLY</span></p>
+            <p className="text-center mt-2">Your email will not be shared or sold, and you will not be bombarded with emails.</p>
+          </div>
+        </div>
       </Modal>
 
       <br />
