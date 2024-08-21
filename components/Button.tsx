@@ -1,6 +1,6 @@
 type StandardButtonPropTypes = {
     text: string;
-    bgColorClass?: string;
+    borderColor?: string;
     fontColorClass?: string;
     className?: string;
 
@@ -8,15 +8,24 @@ type StandardButtonPropTypes = {
 
 export default function StandardButton({
     text,
-    bgColorClass,
+    borderColor,
     fontColorClass,
     className
 }: StandardButtonPropTypes) {
-    return <button className={
-        `${bgColorClass ?? `bg-green-500`} 
-        ${fontColorClass ?? `text-white`} 
-        px-3 py-1 shadow-md
+    return <button
+        style={{ minWidth: 100 }}
+        className={
+            `
+        bg-white
+        text-black
+        font-bold
+        border
+        border-l-4
+        border-b-4
+        ${borderColor ?? `border-primary`}
+        rounded-lg
+        px-3 py-1 
         ${className}
         `
-    }>{text}</button>
+        }>{text}</button>
 }
