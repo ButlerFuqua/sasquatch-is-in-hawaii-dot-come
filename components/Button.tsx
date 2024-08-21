@@ -3,16 +3,18 @@ type StandardButtonPropTypes = {
     borderColor?: string;
     fontColorClass?: string;
     className?: string;
+    onClick: any;
 
 }
 
 export default function StandardButton({
     text,
     borderColor,
-    fontColorClass,
+    onClick,
     className
 }: StandardButtonPropTypes) {
     return <button
+        onClick={onClick}
         style={{ minWidth: 100 }}
         className={
             `

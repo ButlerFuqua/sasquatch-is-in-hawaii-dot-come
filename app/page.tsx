@@ -1,11 +1,41 @@
+"use client"
+
 import Image from "next/image";
 
 import StandardButton from "@/components/Button";
+import Modal from "@/components/Modal";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [showJoinModal, setShowJoinModal] = useState(false);
+
+
+  const handleCloseJoinModal = () => {
+    setShowJoinModal(false);
+  }
+
+  const handleOpenJoinModal = () => {
+    setShowJoinModal(true);
+  }
+
+  const handleShareClick = () => {
+    console.log('SHARE!');
+  }
+
+
   return (
 
     <main className="min-h-screen">
+
+
+      {/* Join Modal */}
+      <Modal showModal={showJoinModal} closeAction={handleCloseJoinModal}>
+        <>
+          Join Modal
+        </>
+      </Modal>
+
       <br />
 
       <div id="wrapper" className="p-1">
@@ -29,8 +59,8 @@ THENK: COOL BACKGROUND
 
 
         <div id="topJoinAndStoreButtons" className="sticky top-0 customContainer mx-auto flex justify-around bg-white py-1">
-          <StandardButton text="Join" className="" fontColorClass="text-black" />
-          <StandardButton text="Share" borderColor="border-primary_alt" className="" />
+          <StandardButton onClick={handleOpenJoinModal} text="Join" className="" fontColorClass="text-black" />
+          <StandardButton onClick={handleShareClick} text="Share" borderColor="border-primary_alt" className="" />
         </div>
 
 
