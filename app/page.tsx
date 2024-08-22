@@ -13,7 +13,7 @@ import Loader from "@/components/Loader";
 export default function Home() {
 
   const [showJoinModal, setShowJoinModal] = useState(false);
-  const [subscribeEmail, setSubscribeEmail] = useState('butlerfuqua+siih-local@gmail.com');
+  const [subscribeEmail, setSubscribeEmail] = useState('');
   const [showLoader, setShowLoader] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -83,7 +83,6 @@ export default function Home() {
                 <Loader />
               </div>
             }
-
             <p className="my-2 font-bold text-center">Real Updates <span className="font-black">ONLY</span></p>
             <p className="text-center mt-2">Your email will not be shared or sold, and you will not be bombarded with junk.</p>
           </div>
@@ -159,6 +158,20 @@ THENK: COOL BACKGROUND
           <StandardButton text="Share Video from Youtube" bgColorClass="bg-red-500" className="flex-1" />
           <StandardButton text="Share this site" bgColorClass="bg-yellow-400" fontColorClass="text-black" className="flex-1" />
         </div> */}
+
+
+        <div className="customContainer mx-auto flex my-5 bg-white border border-black border-l-4 border-b-4 rounded-lg">
+          <img style={{ maxWidth: `40%`, objectFit: 'cover' }}
+            className="rounded rounded-r-none"
+            src="/siih_mug1_mockup.webp" alt="" />
+          <div className="p-2 flex flex-col items-start">
+            <div className="flex-1">
+              <h2 className="text-2xl font-black">Visit the online store!</h2>
+              <p>Unique and fun merch to <span className="font-bold"><span className="text-primary">support</span> independent filmmaking</span> 📽️</p>
+            </div>
+            <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />
+          </div>
+        </div>
 
       </div>
     </main>
