@@ -84,9 +84,8 @@ export default function Home() {
               </div>
             }
 
-
             <p className="my-2 font-bold text-center">Real Updates <span className="font-black">ONLY</span></p>
-            <p className="text-center mt-2">Your email will not be shared or sold, and you will not be bombarded with emails.</p>
+            <p className="text-center mt-2">Your email will not be shared or sold, and you will not be bombarded with junk.</p>
           </div>
         </div>
       </Modal>

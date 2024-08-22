@@ -30,6 +30,12 @@ body {
   font-size: 1.5rem;
 } */
 
+body {
+  background: #fff;
+  background-image: radial-gradient(#999 5%, transparent 0);
+  background-size: 35px 35px;
+}
+
 a {
   color: rgb(35, 59, 217);
   text-decoration: underline;
