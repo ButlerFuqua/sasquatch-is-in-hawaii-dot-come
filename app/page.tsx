@@ -122,8 +122,8 @@ export default function Home() {
 
       <div id="wrapper" className="p-1">
         <div id="headerSection" className="customContainer mx-auto text-center mb-3">
-          <h1 className="text-4xl font-black mb-1">Sasquatch is in Hawai'i</h1>
-          <p>A self-obsorbed media guru and an Alabama Squatcher try to find Sasquatch in the one location no one has looked -Hawai'i</p>
+          <h1 className="text-4xl font-black mb-1">Sasquatch is in Hawaii</h1>
+          <p>A self-absorbed media guru and an Alabama Squatcher try to find Sasquatch in the one location no one has looked -Hawaii</p>
         </div>
 
 
@@ -147,7 +147,7 @@ THENK: COOL BACKGROUND
 
         <div id="videoWrapper" className="container mx-auto flex justify-center">
           {/* @ts-ignore */}
-          <iframe className="rounded" width="560" height="315" src="https://www.youtube.com/embed/djfYLdBeWhY?si=sbPyruQN75tW8NCN" title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xT4frJddCL0?si=vZ2ySGLCUPvRm7S8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         {/* <div className="flex justify-center p-2">
           <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />
