@@ -147,7 +147,7 @@ THENK: COOL BACKGROUND
 
         <div id="videoWrapper" className="container mx-auto flex justify-center">
           {/* @ts-ignore */}
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/xT4frJddCL0?si=vZ2ySGLCUPvRm7S8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe width="700" height="315" src="https://www.youtube.com/embed/xT4frJddCL0?si=vZ2ySGLCUPvRm7S8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         {/* <div className="flex justify-center p-2">
           <ButtonLink href="https://sasquatch-is-in-hawaii.printful.me/" text="Visit Store" />
