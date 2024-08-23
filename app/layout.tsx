@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 const siteTitle = 'Sasquatch is in Hawaii';
 const siteDescription = 'A short film about a self-absorbed media guru and an Alabama Squatcher try to find Sasquatch in the one location no one has looked -Hawaii';
-const thumbnailPath = `https://www.sasquatchisinhawaii.com/thumbnail`;
+const thumbnailPath = `https://www.sasquatchisinhawaii.com/thumbnail.png`;
 
 export const metadata: Metadata = {
   title: siteTitle,
