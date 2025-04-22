@@ -51,40 +51,48 @@ async function handler(
         );
     }
 
-    let { data: subscribers, error } = await supabase
-        .from('subscribers')
-        .select('email')
-        .eq('email', email)
+    try {
 
-    if (error || !subscribers) {
+        let { data: subscribers, error } = await supabase
+            .from('subscribers')
+            .select('email')
+            .eq('email', email)
+
+        if (error || !subscribers) {
+            console.error(error);
+            // Commenting out in case free db plan is shut off
+            // return NextResponse.json(
+            //     {
+            //         message: `Error`
+            //     },
+            //     {
+            //         status: 500,
+            //     },
+            // );
+        }
+
+        if (subscribers?.length) {
+            // Send success instead of error. Either way, they've subscribe and it hides who has already subscribed
+            // return res.status(409).json({ message: 'Already Subscribed' });
+            return NextResponse.json(
+                {
+                    message: `Success!`
+                },
+                {
+                    status: 201,
+                },
+            );
+        }
+
+    } catch (error) {
+        // not handling error in case free db plan is shut off
         console.error(error);
-        return NextResponse.json(
-            {
-                message: `Error`
-            },
-            {
-                status: 500,
-            },
-        );
-    }
-
-    if (subscribers?.length) {
-        // Send success instead of error. Either way, they've subscribe and it hides who has already subscribed
-        // return res.status(409).json({ message: 'Already Subscribed' });
-        return NextResponse.json(
-            {
-                message: `Success!`
-            },
-            {
-                status: 201,
-            },
-        );
     }
 
     // Add to NewsLetter - Behiiv
 
     /*
-        Example:
+        Beehiive Reference Example:
         curl --request POST \
         --url https://api.beehiiv.com/v2/publications/publicationId/subscriptions \
         --header 'Accept: application/json' \
@@ -144,24 +152,30 @@ async function handler(
 
 
     // End add to newsletter
+    try {
+        const { data, error: createError } = await supabase
+            .from('subscribers')
+            .insert([
+                { email },
+            ])
+            .select()
 
-    const { data, error: createError } = await supabase
-        .from('subscribers')
-        .insert([
-            { email },
-        ])
-        .select()
+        if (createError) {
+            console.log(createError)
+            // Commenting out in case free db plan is shut off
+            // return NextResponse.json(
+            //     {
+            //         message: `Error`
+            //     },
+            //     {
+            //         status: 500,
+            //     },
+            // );
+        }
 
-    if (createError) {
-        console.log(createError)
-        return NextResponse.json(
-            {
-                message: `Error`
-            },
-            {
-                status: 500,
-            },
-        );
+    } catch (error) {
+        // not handling error in case free db plan is shut off
+        console.error(error);
     }
 
     return NextResponse.json(
